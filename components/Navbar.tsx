@@ -1,7 +1,7 @@
-import { NAV_LINKS } from "@/constants"
-import Image from "next/image"
-import Link from "next/link"
-import Button from "./Button"
+import { NAV_LINKS } from "@/constants";
+import Image from "next/image";
+import Link from "next/link";
+import Button from "./Button";
 
 const Navbar = () => {
   return (
@@ -12,14 +12,18 @@ const Navbar = () => {
 
       <ul className="hidden h-full gap-12 lg:flex">
         {NAV_LINKS.map((link) => (
-          <Link href={link.href} key={link.key} className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold">
+          <Link
+            href={link.href}
+            key={link.key}
+            className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold"
+          >
             {link.label}
           </Link>
         ))}
       </ul>
 
       <div className="lg:flexCenter hidden">
-        <Button 
+        <Button
           type="button"
           title="Login"
           icon="/user.svg"
@@ -27,7 +31,7 @@ const Navbar = () => {
         />
       </div>
 
-      <Image 
+      <Image
         src="menu.svg"
         alt="menu"
         width={32}
@@ -35,7 +39,7 @@ const Navbar = () => {
         className="inline-block cursor-pointer lg:hidden"
       />
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
