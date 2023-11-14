@@ -1,4 +1,7 @@
+"use client";
+
 import { PEOPLE_URL } from "@/constants";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 interface CampProps {
@@ -55,19 +58,28 @@ const Camp = () => {
       <div className="hide-scrollbar flex h-[340px] w-full items-start justify-start gap-8 overflow-x-auto lg:h-[400px] xl:h-[640px]">
         <CampSite
           backgroundImage="bg-bg-img-1"
-          title="Putuk Truno Camp"
-          subtitle="Prigen, Pasuruan"
+          title="Bedengan Camp Area"
+          subtitle="Solorejo, Malang"
           peopleJoined="50+ Joined"
         />
         <CampSite
           backgroundImage="bg-bg-img-2"
-          title="Mountain View Camp"
+          title="other view"
           subtitle="Somewhere in the Wilderness"
           peopleJoined="50+ Joined"
         />
       </div>
 
-      <div className="flexEnd mt-10 px-6 lg:-mt-60 lg:mr-6">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+        className="flexEnd mt-10 px-6 lg:-mt-60 lg:mr-6"
+      >
         <div className="bg-green-50 p-8 lg:max-w-[500px] xl:max-w-[734px] xl:rounded-5xl xl:px-16 xl:py-20 relative w-full overflow-hidden rounded-3xl">
           <h2 className="regular-24 md:regular-32 2xl:regular-64 capitalize text-white">
             <strong>Feeling Lost</strong> And Not Knowing The Way?
@@ -86,7 +98,7 @@ const Camp = () => {
             className="camp-quote"
           />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
